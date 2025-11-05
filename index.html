@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAIK MURASHA VALLI - Interior Designer | Visualizer</title>
+    <meta name="description" content="Portfolio of Shaik Murasha Valli - Interior Designer and Visualizer specializing in AutoCAD, Revit, SketchUp, and 3D visualization" />
+    <meta name="author" content="Shaik Murasha Valli" />
+    <meta name="keywords" content="Interior Design, AutoCAD, Revit, SketchUp, 3D Visualization, Enscape, V-Ray, Civil Engineering" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Include Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+    /* Light theme colors */
+    --background: #fffdf0;
+    --foreground: #1e2124;
+    --card: #ffffff;
+    --card-foreground: #1e2124;
+    --primary: #0f172a;
+    --primary-foreground: #ffffff;
+    --secondary: #fff9e6;
+    --secondary-foreground: #0f172a;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --accent: #fbbf24;
+    --accent-foreground: #0f172a;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #fbbf24;
+    --radius: 0.75rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme colors */
+.dark {
+    --background: #0f1114;
+    --foreground: #fafafa;
+    --card: #1a1d21;
+    --card-foreground: #fafafa;
+    --primary: #fbbf24;
+    --primary-foreground: #0f1114;
+    --secondary: #1f2225;
+    --secondary-foreground: #fafafa;
+    --muted: #1f2225;
+    --muted-foreground: #9ca3af;
+    --accent: #fbbf24;
+    --accent-foreground: #0f1114;
+    --border: #1f2225;
+    --input: #1f2225;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-color: var(--border);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 50;
+    transition: var(--transition-smooth);
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.btn-primary.btn-view {
+    background-color: var(--background);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    margin-left: 1rem;
+}
+
+.btn-primary.btn-view:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.resume-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-theme {
+    background: none;
+    border: none;
+    color: var(--foreground);
+    cursor: pointer;
+}
+
+/* Make download CV buttons render in lowercase only */
+.download-cv {
+    text-transform: lowercase;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.hero-text {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    margin-bottom: 2rem;
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+/* Project Carousel */
+.carousel {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--border);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.dot.active {
+    width: 2rem;
+    border-radius: 9999px;
+    background-color: var(--accent);
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.skill-bar {
+    height: 0.5rem;
+    background-color: var(--muted);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: var(--accent);
+    transition: width 1s ease-in-out;
+}
+
+/* Contact */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.contact-link:hover {
+    color: var(--accent);
+}
+
+/* Footer */
+.footer {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.address,
+.copyright {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 0.5rem;
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.smooth-transition {
+    transition: var(--transition-smooth);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .internships-grid,
+    .education-grid,
+    .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+    </style>
+</head>
+<body class="light">
+    <!-- Sticky Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <h2 class="logo">SHAIK MURASHA VALLI</h2>
+            
+            <div class="nav-links">
+                <button onclick="scrollToSection('home')" class="nav-link active">Home</button>
+                <button onclick="scrollToSection('objective')" class="nav-link">Objective</button>
+                <button onclick="scrollToSection('internships')" class="nav-link">Internships</button>
+                <button onclick="scrollToSection('projects')" class="nav-link">Projects</button>
+                <button onclick="scrollToSection('education')" class="nav-link">Education</button>
+                <button onclick="scrollToSection('certifications')" class="nav-link">Certifications</button>
+                <button onclick="scrollToSection('skills')" class="nav-link">Skills</button>
+                <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+                <div class="resume-buttons">
+                    <a href="assets/My%20resume%20for%20melikal.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i data-lucide="eye"></i>
+                        View CV
+                    </a>
+                </div>
+            </div>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <i data-lucide="moon" class="theme-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <h1 class="hero-title">SHAIK MURASHA VALLI</h1>
+            <p class="hero-subtitle">Sketch. Model. Visualize.</p>
+            <p class="hero-text">Interior Designer | Visualizer | Civil Engineer (B.Tech)</p>
+        </div>
+    </section>
+
+    <!-- Career Objective -->
+    <section id="objective" class="section bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Career Objective</h2>
+            <div class="card">
+                <p class="objective-text">
+                    To leverage my expertise in AutoCAD, Revit, and SketchUp to create innovative and functional interior design solutions, while continuously advancing my 3D visualization, spatial planning, and design documentation skills to meet the evolving standards of the design industry.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships & Workshops -->
+    <section id="internships" class="section">
+        <div class="container">
+            <h2 class="section-title">Internships & Workshops</h2>
+            <div class="internships-grid">
+                <div class="card">
+                    <h3 class="card-title">APSSDC – Revit Architecture</h3>
+                    <p class="card-date">May–July 2025 (2 Months)</p>
+                    <p class="card-text">
+                        Modeled G+2 residential building layouts and created realistic rendering using Enscape.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">APSSDC – AutoCAD</h3>
+                    <p class="card-date">11/12/2023–16/12/2023 (1 Week)</p>
+                    <p class="card-text">
+                        Prepared 2BHK house plan including column layouts, beam layouts, sections, and elevations in imperial units (feet and inches).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Updated) -->
+    <section id="projects" class="section bg-secondary">
+        <div class="container">
+            <div class="projects-header">
+                <h2 class="section-title">Projects</h2>
+                <p class="text-center muted-foreground">
+                    Preview of featured projects — click any project to open the detailed view.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Featured Project 01 -->
+                <div class="card" style="margin-bottom:1.5rem; padding:1.5rem;">
+                    <h3 class="card-title" style="margin-bottom:0.5rem;">Featured — Project 01</h3>
+                    <p style="font-weight:500;">2BHK Residential Interior Design</p>
+                    <p class="muted-foreground" style="margin-top:0.5rem;">
+                        Full 2BHK interior design: living room, two bedrooms, and modular kitchen with realistic renders and technical plans.
+                    </p>
+                    <p style="margin-top:1rem;">
+                        <a href="projects/projects.html" class="btn btn-primary">View Project 01</a>
+                    </p>
+                </div>
+
+                <!-- Featured Project 02 -->
+                <div class="card" style="margin-bottom:1.5rem; padding:1.5rem;">
+                    <h3 class="card-title" style="margin-bottom:0.5rem;">Featured — Project 02</h3>
+                    <p style="font-weight:500;">G+1 Elevation Design</p>
+                    <p class="muted-foreground" style="margin-top:0.5rem;">
+                        Contemporary front elevation design with morning & evening lighting renders showing before/after transformation.
+                    </p>
+                    <p style="margin-top:1rem;">
+                        <a href="projects/project2.html" class="btn btn-primary">View Project 02</a>
+                    </p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="card">
+                    <h3 class="card-title">B.Tech Civil Engineering</h3>
+                    <p class="institution">KSRM COLLEGE OF ENGINEERING</p>
+                    <p class="grade">CGPA: 7.7</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Diploma in Civil Engineering</h3>
+                    <p class="institution">GOLDEN VALLEY INTEGRATED CAMPUS</p>
+                    <p class="grade">73%</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">SSC</h3>
+                    <p class="institution">HOPE MUNICIPAL HIGH SCHOOL</p>
+                    <p class="grade">8.2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="card certification-card">
+                    <p>AutoCAD for Architectural Design – Andhra Pradesh State Skill Development Corporation</p>
+                </div>
+                <div class="card certification-card">
+                    <p>Revit Architecture – APSSDC Online Learning Center</p>
+                </div>
+                <div class="card certification-card">
+                    <p>SketchUp & V-Ray for Architectural Visualization – Creative Design Institute</p>
+                </div>
+                <div class="card certification-card">
+                    <p>Enscape Real-time Rendering – Architectural Visualization Workshop</p>
+                </div>
+                <div class="card certification-card">
+                    <p>Lumion Advanced Rendering – Online Certification Program</p>
+                </div>
+                <div class="card certification-card">
+                    <p>3D Interior Design & Visualization – Professional Development Course</p>
+                </div>
+                <div class="card certification-card">
+                    <p>Digital Design & Presentation – Architectural Visualization Certificate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">AutoCAD</span>
+                        <span class="skill-level">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">Revit Architecture</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">SketchUp</span>
+                        <span class="skill-level">92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">V-Ray</span>
+                        <span class="skill-level">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">Enscape</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">Lumion</span>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">3ds Max</span>
+                        <span class="skill-level">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-header">
+                        <span class="skill-name">Adobe Photoshop</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="hero-buttons">
+                <a href="assets/My%20resume%20for%20melikal.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-view">
+                    <i data-lucide="eye"></i>
+                    View Resume
+                </a>
+            </div>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-links">
+                <a href="tel:+919640687149" class="contact-link">
+                    <i data-lucide="phone"></i>
+                    +91 9640687149
+                </a>
+                
+                <a href="mailto:shaikmurashavalli1234@gmail.com" class="contact-link">
+                    <i data-lucide="mail"></i>
+                    shaikmurashavalli1234@gmail.com
+                </a>
+                
+                <a href="https://www.linkedin.com/in/shaik-murasha-valli-314583312" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i data-lucide="linkedin"></i>
+                    LinkedIn Profile
+                    <i data-lucide="external-link" class="icon-small"></i>
+                </a>
+            </div>
+
+            <footer class="footer">
+                <p class="address">
+                    17-447-B, Motinagar, NVR Street, Madanapalli-517325, Annamayya (D), India
+                </p>
+                <p class="copyright">
+                    © Shaik Murasha Valli — All rights reserved
+                </p>
+            </footer>
+        </div>
+    </section>
+
+    <script >
+        // Project data
+const projects = [
+    {
+        id: 1,
+        title: "Project 01 — 2BHK Residential Interior Design",
+        description: "Full 2BHK interior design: living room, two bedrooms, and modular kitchen with realistic renders and technical plans.",
+        tools: ["Revit", "SketchUp", "Enscape", "AutoCAD"],
+        image: "./assets/project1-thumb.jpg",
+    },
+    {
+        id: 2,
+        title: "Project 02 — G+1 Elevation Design",
+        description: "Contemporary front elevation design with morning & evening lighting renders showing before/after transformation.",
+        tools: ["SketchUp", "V-Ray", "AutoCAD"],
+        image: "./assets/project2-thumb.jpg",
+    },
+    {
+        id: 3,
+        title: "Project 03 — G+1 Elevation (Alternative Concept)",
+        description: "Façade redesign showing material/texture exploration and final rendered visuals.",
+        tools: ["SketchUp", "Enscape", "AutoCAD"],
+        image: "./assets/project3-thumb.jpg",
+    },
+];
+
+// Skills data with updated proficiency levels from resume
+const skills = [
+    { name: "AutoCAD", level: 95 },
+    { name: "Revit Architecture", level: 90 },
+    { name: "SketchUp", level: 92 },
+    { name: "V-Ray", level: 88 },
+    { name: "Enscape", level: 85 },
+    { name: "Lumion", level: 80 },
+    { name: "3ds Max", level: 75 },
+    { name: "Adobe Photoshop", level: 70 }
+];
+
+// Updated certifications from resume
+const certifications = [
+    "AutoCAD for Architectural Design – Andhra Pradesh State Skill Development Corporation",
+    "Revit Architecture – APSSDC Online Learning Center",
+    "SketchUp & V-Ray for Architectural Visualization – Creative Design Institute",
+    "Enscape Real-time Rendering – Architectural Visualization Workshop",
+    "Lumion Advanced Rendering – Online Certification Program",
+    "3D Interior Design & Visualization – Professional Development Course",
+    "Digital Design & Presentation – Architectural Visualization Certificate"
+];
+
+// Variables for project carousel
+let currentSlide = 0;
+let isAutoplay = true;
+let autoplayInterval;
+let isPaused = false;
+
+// Initialize Lucide icons
+function initializeLucideIcons() {
+    lucide.createIcons();
+}
+
+// Theme toggling
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.querySelector('.theme-icon');
+    
+    body.classList.toggle('dark');
+    
+    if (body.classList.contains('dark')) {
+        themeIcon.setAttribute('data-lucide', 'sun');
+    } else {
+        themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    
+    initializeLucideIcons();
+}
+
+// Smooth scrolling
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    const navHeight = document.querySelector('.nav').offsetHeight;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+    });
+}
+
+// Project carousel controls
+function updateProject() {
+    const projectContent = document.querySelector('.project-content');
+    const project = projects[currentSlide];
+    
+    projectContent.innerHTML = `
+        <h3 class="card-title">${project.title}</h3>
+        <p class="card-text">${project.description}</p>
+        <div class="tools">
+            ${project.tools.map(tool => `<span class="badge">${tool}</span>`).join('')}
+        </div>
+        <div class="project-image">
+            <img src="${project.image}" alt="${project.title}" loading="lazy">
+        </div>
+            <a href="./assets/My_Portfolio.pdf" target="_blank" class="btn btn-primary">
+            <i data-lucide="download"></i>
+            Download Project PDF
+        </a>
+        <a href="preview-projects/project${project.id}.html" class="btn btn-outline" style="margin-left:0.5rem;">Open Preview Page</a>
+    `;
+    
+    updateDots();
+    initializeLucideIcons();
+}
+
+function updateDots() {
+    const dotsContainer = document.querySelector('.carousel-dots');
+    dotsContainer.innerHTML = projects.map((_, index) => `
+        <button class="dot ${index === currentSlide ? 'active' : ''}"
+                onclick="goToSlide(${index})"
+                aria-label="Go to slide ${index + 1}">
+        </button>
+    `).join('');
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + projects.length) % projects.length;
+    updateProject();
+    pauseAutoplay();
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % projects.length;
+    updateProject();
+    pauseAutoplay();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateProject();
+    pauseAutoplay();
+}
+
+function toggleAutoplay() {
+    isAutoplay = !isAutoplay;
+    const icon = document.getElementById('autoplayIcon');
+    const text = document.getElementById('autoplayText');
+    
+    if (isAutoplay) {
+        startAutoplay();
+        icon.setAttribute('data-lucide', 'pause');
+        text.textContent = 'Pause';
+    } else {
+        stopAutoplay();
+        icon.setAttribute('data-lucide', 'play');
+        text.textContent = 'Play';
+    }
+    
+    initializeLucideIcons();
+}
+
+function startAutoplay() {
+    if (!autoplayInterval) {
+        autoplayInterval = setInterval(() => {
+            if (!isPaused) {
+                nextSlide();
+            }
+        }, 6000);
+    }
+}
+
+function stopAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = null;
+}
+
+function pauseAutoplay() {
+    isPaused = true;
+    setTimeout(() => {
+        isPaused = false;
+    }, 10000);
+}
+
+// Initialize skills section
+function initializeSkills() {
+    const skillsGrid = document.querySelector('.skills-grid');
+    
+    skillsGrid.innerHTML = skills.map(skill => `
+        <div class="skill">
+            <div class="skill-header">
+                <span class="skill-name">${skill.name}</span>
+                <span class="skill-level">${skill.level}%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: ${skill.level}%"></div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Initialize certifications section
+function initializeCertifications() {
+    const certificationsGrid = document.querySelector('.certifications-grid');
+    
+    certificationsGrid.innerHTML = certifications.map(cert => `
+        <div class="card certification-card">
+            <p>${cert}</p>
+        </div>
+    `).join('');
+}
+
+// Handle scroll for nav highlighting
+function handleScroll() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navHeight = document.querySelector('.nav').offsetHeight;
+    
+    sections.forEach((section, index) => {
+        const top = section.offsetTop - navHeight - 100;
+        const bottom = top + section.offsetHeight;
+        
+        if (window.scrollY >= top && window.scrollY < bottom) {
+            navLinks[index].classList.add('active');
+        } else {
+            navLinks[index].classList.remove('active');
+        }
+    });
+}
+
+// Initialize everything when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initializeLucideIcons();
+    updateProject();
+    initializeSkills();
+    initializeCertifications();
+    startAutoplay();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Handle keyboard navigation for carousel
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+});
+    </script>
+</body>
+</html>

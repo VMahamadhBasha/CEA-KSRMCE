@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEA KSRMCE - College Association</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007A65; /* A shade of green/teal from your logo */
+            --secondary-color: #1a6f8a; /* A shade of blue from your logo */
+            --accent-color: #38bdf8; /* Lighter blue for accents */
+            --danger-color: #ef4444; /* Red for the close button */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+        .text-secondary { color: var(--secondary-color); }
+        .bg-secondary { background-color: var(--secondary-color); }
+        .text-accent { color: var(--accent-color); }
+        .bg-accent { background-color: var(--accent-color); }
+        .bg-danger { background-color: var(--danger-color); }
+
+        /* CSS for the Sliding Background Images */
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Below content */
+            opacity: 0.15; /* Subtly visible background */
+            animation: slide-bg 15s infinite ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes slide-bg {
+            0% { background-image: url('https://placehold.co/1200x600/10B981/ffffff?text=KSRMCE+Campus+View+1'); }
+            33% { background-image: url('https://placehold.co/1200x600/059669/ffffff?text=KSRMCE+Laboratory+2'); }
+            66% { background-image: url('https://placehold.co/1200x600/047857/ffffff?text=KSRMCE+Department+Block+3'); }
+            100% { background-image: url('https://placehold.co/1200x600/10B981/ffffff?text=KSRMCE+Campus+View+1'); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar --><header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Title --><div class="flex items-center space-x-3">
+                    <img src="CEA.jpg" alt="CEA KSRMCE Association Logo" class="h-12 w-auto">
+                    <span class="text-2xl font-extrabold text-primary"- style="text-align: min-width: ;;">CEA-KSRMCE</span>
+                </div>
+
+                <!-- Navigation Links --><nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary transition duration-150 font-medium">About</a>
+                    <a href="#events" class="text-gray-600 hover:text-primary transition duration-150 font-medium">Events</a>
+                    <a href="#cea-fest" class="text-gray-600 hover:text-primary transition duration-150 font-medium">CEA Fest</a>
+                    <a href="#team" class="text-gray-600 hover:text-primary transition duration-150 font-medium">Our Team</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary transition duration-150 font-medium">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button (Hamburger) --><button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) --><div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">About</a>
+                <a href="#events" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Events</a>
+                <a href="#cea-fest" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">CEA Fest</a>
+                <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Our Team</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content --><main class="min-h-screen">
+        <!-- Hero Section (with Sliding Background Images) --><section class="relative bg-primary pt-24 pb-32 text-white overflow-hidden">
+            <!-- Sliding Background Element --><div class="hero-slider"></div>
+            
+            <!-- Content (z-index 10 to layer above the background) --><div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+                    Civil Engineering Association
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-8 opacity-90">
+                    K.S.R.M. College of Engineering
+                </p>
+                <a href="#cea-fest" class="inline-block bg-accent text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
+                    Explore CEA Fest
+                </a>
+            </div>
+        </section>
+
+        <!-- Event Details View (Initially Hidden) --><section id="event-details-view" class="hidden fixed inset-0 z-[60] overflow-y-auto bg-gray-900 bg-opacity-95 p-4 sm:p-8 transition-opacity duration-300">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-6 md:p-10 relative">
+                <!-- Close Button --><button onclick="hideEventDetails()" class="absolute top-4 right-4 p-2 bg-danger text-white rounded-full hover:bg-red-700 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                
+                <h2 id="detail-title" class="text-4xl font-extrabold text-secondary mb-4 pt-4">Event Title</h2>
+                <span id="detail-type" class="inline-block text-sm font-semibold text-primary px-3 py-1 rounded-full bg-primary/10 mb-6">Technical</span>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Poster/Image Column --><div class="order-1 lg:order-2">
+                        <img id="detail-poster" src="" alt="Event Poster" class="w-full h-auto rounded-lg shadow-xl object-cover">
+                        
+                        <!-- Registration Button --><a id="detail-reg-link" href="#" target="_blank" class="block w-full text-center mt-6 bg-accent text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:bg-blue-600 transform hover:scale-[1.02] transition duration-300">
+                            REGISTER NOW (Google Form)
+                        </a>
+                    </div>
+                    
+                    <!-- Details Column --><div class="order-2 lg:order-1 space-y-6">
+                        <div id="detail-description" class="text-gray-700 text-lg leading-relaxed">Description goes here.</div>
+                        
+                        <!-- Schedule and Venue --><div class="p-4 bg-gray-50 rounded-lg border-l-4 border-primary">
+                            <h4 class="font-bold text-lg text-primary mb-2">Schedule & Venue</h4>
+                            <p class="text-gray-700"><span class="font-semibold">Venue:</span> <span id="detail-venue"></span></p>
+                            <p class="text-gray-700"><span class="font-semibold">Timings:</span> <span id="detail-time"></span></p>
+                        </div>
+
+                        <!-- Coordinator Details --><div class="p-4 bg-gray-50 rounded-lg border-l-4 border-secondary">
+                            <h4 class="font-bold text-lg text-secondary mb-2">Event Coordinators</h4>
+                            <p class="text-gray-700"><span class="font-semibold">Student Coor.:</span> <span id="detail-student-coord"></span></p>
+                            <p class="text-gray-700"><span class="font-semibold">Faculty Coor.:</span> <span id="detail-faculty-coord"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section (Content Omitted for Brevity - Unchanged) -->
+        <section id="about" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-primary mb-3">About the Association</h2>
+                    <p class="text-xl text-gray-600">Our Mission and Vision</p>
+                </div>
+
+                <div class="lg:flex lg:space-x-12">
+                    <div class="lg:w-1/2 p-6 bg-gray-50 rounded-xl shadow-lg mb-8 lg:mb-0">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Our Vision</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            To create a dynamic platform for KSRMCE Civil Engineering students to enhance their technical, managerial, and soft skills, making them industry-ready professionals and innovative leaders. We aim to be the premier technical association on campus, fostering growth in civil engineering domains.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 p-6 bg-gray-50 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Our Focus Areas</h3>
+                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                            <li>Organizing Workshops on advanced civil engineering software and techniques.</li>
+                            <li>Conducting Technical Fests, Project Expos, and Design Competitions.</li>
+                            <li>Mentorship programs with faculty, senior students, and industry experts.</li>
+                            <li>Promoting research, sustainable practices, and innovative project development.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section (Content Omitted for Brevity - Unchanged) -->
+        <section id="events" class="py-16 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-primary mb-3">Yearly Events Calendar</h2>
+                    <p class="text-xl text-gray-600">A look at some of our regularly held activities.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Event 1 (Placeholder) --><div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <h3 class="text-xl font-bold text-primary mb-2">Structural Design Workshop</h3>
+                        <p class="text-sm text-secondary mb-3">Date: Jan 10, 2026 | Time: 9:00 AM</p>
+                        <p class="text-gray-700">Hands-on workshop using industry-standard software for structural analysis and design. Essential for aspiring civil engineers.</p>
+                        <button class="mt-4 text-sm font-semibold text-accent hover:underline">View Details →</button>
+                    </div>
+
+                    <!-- Event 2 (Placeholder) --><div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <h3 class="text-xl font-bold text-primary mb-2">Sustainable Infrastructure Summit</h3>
+                        <p class="text-sm text-secondary mb-3">Date: Feb 20, 2026 | Time: 10:00 AM</p>
+                        <p class="text-gray-700">A summit featuring expert speakers on green building, renewable energy in construction, and resilient urban planning.</p>
+                        <button class="mt-4 text-sm font-semibold text-accent hover:underline">View Details →</button>
+                    </div>
+
+                    <!-- Event 3 (Placeholder) --><div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <h3 class="text-xl font-bold text-primary mb-2">CEA Field Trip & Site Visit</h3>
+                        <p class="text-sm text-secondary mb-3">Date: Mar 5, 2026 | Time: 8:00 AM</p>
+                        <p class="text-gray-700">An educational field trip to a live construction site or major infrastructure project to gain practical exposure.</p>
+                        <button class="mt-4 text-sm font-semibold text-accent hover:underline">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CEA Fest Section (Updated with Interactivity) --><section id="cea-fest" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-5xl font-extrabold text-secondary mb-3">CEA FEST 2025</h2>
+                    <p class="text-xl text-gray-600">The premier technical and cultural extravaganza of KSRMCE Civil Engineering. Click any event to see details!</p>
+                </div>
+
+                <!-- Overall Fest Poster (EASILY MODIFIABLE) --><div class="flex justify-center mb-12">
+                    <a href="https://ksrmce.ac.in/" target="_blank">
+                        <img src="https://placehold.co/800x400/1a6f8a/ffffff?text=CEA+FEST+2025+Official+Poster" alt="Overall CEA Fest Poster" class="rounded-xl shadow-2xl border-4 border-primary/50 transition duration-300 hover:scale-[1.02]">
+                    </a>
+                </div>
+
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                    <!-- Technical Events --><div class="p-8 bg-gray-50 rounded-xl shadow-lg mb-8 lg:mb-0">
+                        <h3 class="text-3xl font-bold text-primary mb-6 border-b-2 border-primary/50 pb-2">Technical Events</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <!-- Technical Event 1 -->
+                            <button onclick="showEventDetails('bridge-o-mania')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-primary font-extrabold text-2xl mr-3">🏗</span>
+                                <div>
+                                    <span class="font-semibold text-primary">Bridge-O-Mania:</span> Design and build a miniature bridge...
+                                </div>
+                            </button>
+                            <!-- Technical Event 2 -->
+                            <button onclick="showEventDetails('cadd-war')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-primary font-extrabold text-2xl mr-3">💻</span>
+                                <div>
+                                    <span class="font-semibold text-primary">CADD War:</span> A time-bound competition to produce precise 2D or 3D drawings...
+                                </div>
+                            </button>
+                            <!-- Technical Event 3 -->
+                            <button onclick="showEventDetails('surveying-challenge')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-primary font-extrabold text-2xl mr-3">📐</span>
+                                <div>
+                                    <span class="font-semibold text-primary">Surveying Challenge:</span> Practical hands-on event testing the accuracy and speed...
+                                </div>
+                            </button>
+                            <!-- Technical Event 4 -->
+                            <button onclick="showEventDetails('paper-presentation')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-primary font-extrabold text-2xl mr-3">📰</span>
+                                <div>
+                                    <span class="font-semibold text-primary">Innovative Paper Presentation:</span> Students present research on topics like sustainable construction...
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Non-Technical Events --><div class="p-8 bg-gray-50 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-secondary mb-6 border-b-2 border-secondary/50 pb-2">Non-Technical & Fun Events</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <!-- Non-Technical Event 1 -->
+                            <button onclick="showEventDetails('quiz-master')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-secondary font-extrabold text-2xl mr-3">🧠</span>
+                                <div>
+                                    <span class="font-semibold text-secondary">CEA Quiz Master:</span> General knowledge and current affairs quiz...
+                                </div>
+                            </button>
+                            <!-- Non-Technical Event 2 -->
+                            <button onclick="showEventDetails('instagram-challenge')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-secondary font-extrabold text-2xl mr-3">📸</span>
+                                <div>
+                                    <span class="font-semibold text-secondary">Photo Booth & Instagram Challenge:</span> A social event to capture and share the spirit...
+                                </div>
+                            </button>
+                            <!-- Non-Technical Event 3 -->
+                            <button onclick="showEventDetails('minute-to-win-it')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-secondary font-extrabold text-2xl mr-3">⏱</span>
+                                <div>
+                                    <span class="font-semibold text-secondary">Minute to Win It:</span> Quick, fun, and engaging games testing reflexes and coordination.
+                                </div>
+                            </button>
+                            <!-- Non-Technical Event 4 -->
+                            <button onclick="showEventDetails('cultural-night')" class="flex w-full text-left p-3 rounded-lg hover:bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-accent/50 items-start">
+                                <span class="text-secondary font-extrabold text-2xl mr-3">🎤</span>
+                                <div>
+                                    <span class="font-semibold text-secondary">Cultural Night:</span> Talent showcase including singing, dancing, and drama performances.
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section (Content Omitted for Brevity - Unchanged) -->
+        <section id="team" class="py-16 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-primary mb-3">Governing Council of CEA</h2>
+                    <p class="text-xl text-gray-600">The dedicated team leading the Civil Engineering Association, KSRMCE.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Team Member 1 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=Dr.TP" alt="Dr. T. NAGESWARA PRASAD">
+                        <h4 class="text-lg font-bold text-primary">Dr. T. NAGESWARA PRASAD</h4>
+                        <p class="text-sm text-secondary font-medium">PRINCIPAL</p>
+                        <p class="text-xs text-gray-600">Contact: 9000332294</p>
+                        <a href="mailto:principal@ksrmce.ac.in" class="text-xs text-accent hover:underline">principal@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 2 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=Dr.GR" alt="Dr. G.CHENNAKESAVA REDDY">
+                        <h4 class="text-lg font-bold text-primary">Dr. G.CHENNAKESAVA REDDY</h4>
+                        <p class="text-sm text-secondary font-medium">HOD- CE</p>
+                        <p class="text-xs text-gray-600">Contact: 9182477938</p>
+                        <a href="mailto:hod.ce@ksrmce.ac.in" class="text-xs text-accent hover:underline">hod.ce@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 3 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=KHK" alt="K. HEMANTH KUMAR REDDY">
+                        <h4 class="text-lg font-bold text-primary">K. HEMANTH KUMAR REDDY</h4>
+                        <p class="text-sm text-secondary font-medium">CONVENER</p>
+                        <p class="text-xs text-gray-600">Contact: 8143425172</p>
+                        <a href="mailto:khkreddy@ksrmce.ac.in" class="text-xs text-accent hover:underline">khkreddy@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 4 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=GSB" alt="G. SADAK BASHA">
+                        <h4 class="text-lg font-bold text-primary">G. SADAK BASHA</h4>
+                        <p class="text-sm text-secondary font-medium">PRESIDENT</p>
+                        <p class="text-xs text-gray-600">Contact: 9381104160</p>
+                        <a href="mailto:239y5a0127@ksrmce.ac.in" class="text-xs text-accent hover:underline">239y5a0127@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 5 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=GBR" alt="G. BHARATH REDDY">
+                        <h4 class="text-lg font-bold text-primary">G. BHARATH REDDY</h4>
+                        <p class="text-sm text-secondary font-medium">VICE-PRESIDENT</p>
+                        <p class="text-xs text-gray-600">Contact: 7981348457</p>
+                        <a href="mailto:239y5a0115@ksrmce.ac.in" class="text-xs text-accent hover:underline">239y5a0115@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 6 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=KTS" alt="K. THANU SRI">
+                        <h4 class="text-lg font-bold text-primary">K. THANU SRI</h4>
+                        <p class="text-sm text-secondary font-medium">SECRETARY</p>
+                        <p class="text-xs text-gray-600">Contact: 7780758234</p>
+                        <a href="mailto:239y5a0138@ksrmce.ac.in" class="text-xs text-accent hover:underline">239y5a0138@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 7 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=PS" alt="P. SHARMILA">
+                        <h4 class="text-lg font-bold text-primary">P. SHARMILA</h4>
+                        <p class="text-sm text-secondary font-medium">GENERAL SECRETARY</p>
+                        <p class="text-xs text-gray-600">Contact: 8074525757</p>
+                        <a href="mailto:239y5a0137@ksrmce.ac.in" class="text-xs text-accent hover:underline">239y5a0137@ksrmce.ac.in</a>
+                    </div>
+
+                    <!-- Team Member 8 --><div class="text-center p-4 rounded-lg bg-white shadow-md">
+                        <img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover bg-gray-300" src="https://placehold.co/96x96/e0e0e0/333333?text=PK" alt="P. KHALEEL">
+                        <h4 class="text-lg font-bold text-primary">P. KHALEEL</h4>
+                        <p class="text-sm text-secondary font-medium">TRESURER</p>
+                        <p class="text-xs text-gray-600">Contact: 8106986301</p>
+                        <a href="mailto:239y5a0154@ksrmce.ac.in" class="text-xs text-accent hover:underline">239y5a0154@ksrmce.ac.in</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer id="contact" class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg font-semibold mb-2">Connect with CEA KSRMCE</p>
+            <p class="text-gray-400 mb-4">Email: cea@ksrmce.ac.in | Phone: +91 81434 25172 (Convener)</p>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Facebook</a>
+            </div>
+            <p class="mt-6 text-sm text-gray-500">&copy; 2025 CEA KSRMCE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- CEA FEST EVENT DATA (EDIT THIS SECTION TO UPDATE DETAILS) ---
+        const eventData = {
+            'bridge-o-mania': {
+                title: 'Bridge-O-Mania',
+                type: 'Technical',
+                description: 'Design and construct a scaled-down bridge model using supplied materials (popsicle sticks, glue, string) to maximize structural efficiency and load-bearing capacity. Creativity and strength are key!',
+                venue: 'Civil Lab - Structures Wing (Block A)',
+                time: 'Day 1 (March 15) | 10:00 AM - 4:00 PM',
+                poster: 'https://placehold.co/600x400/007A65/ffffff?text=Bridge+Mania+Poster',
+                regLink: 'https://forms.gle/YOUR_BRIDGE_REGISTRATION_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'P. Vamsi (9398XXXXXX)',
+                facultyCoord: 'Dr. K. Devi, Assoc. Prof. (9849XXXXXX)'
+            },
+            'cadd-war': {
+                title: 'CADD War',
+                type: 'Technical',
+                description: 'A rapid design challenge where participants use AutoCAD or Revit to produce complex 2D or 3D civil engineering drawings under strict time constraints. Precision and speed will determine the winner.',
+                venue: 'CADD Lab - Computer Center',
+                time: 'Day 2 (March 16) | 11:00 AM - 1:00 PM',
+                poster: 'https://placehold.co/600x400/1a6f8a/ffffff?text=CADD+War+Poster',
+                regLink: 'https://forms.gle/YOUR_CADD_WAR_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'S. Sai Kiran (8008XXXXXX)',
+                facultyCoord: 'Mr. N. Ramesh, Asst. Prof. (9492XXXXXX)'
+            },
+            'surveying-challenge': {
+                title: 'Surveying Challenge',
+                type: 'Technical',
+                description: 'A field-based competition utilizing modern surveying equipment (Total Stations, Levels). Teams will be tasked with accurate measurement, data collection, and plotting within a designated campus area.',
+                venue: 'College Grounds & Survey Lab',
+                time: 'Day 1 (March 15) | 9:00 AM - 12:00 PM',
+                poster: 'https://placehold.co/600x400/007A65/ffffff?text=Surveying+Challenge+Poster',
+                regLink: 'https://forms.gle/YOUR_SURVEY_CHALLENGE_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'G. Tejaswi (7799XXXXXX)',
+                facultyCoord: 'Ms. T. Swathi, Asst. Prof. (7893XXXXXX)'
+            },
+            'paper-presentation': {
+                title: 'Innovative Paper Presentation',
+                type: 'Technical',
+                description: 'Showcase your research and ideas on future-forward Civil Engineering topics (e.g., Green Concrete, AI in Construction, Disaster Mitigation). Top presentations receive cash prizes.',
+                venue: 'Auditorium - Seminar Hall 1',
+                time: 'Day 2 (March 16) | 2:00 PM - 4:00 PM',
+                poster: 'https://placehold.co/600x400/1a6f8a/ffffff?text=Paper+Presentation+Poster',
+                regLink: 'https://forms.gle/YOUR_PAPER_PRESENTATION_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'K. Srujan (9000XXXXXX)',
+                facultyCoord: 'Dr. C. Madhavi, Prof. (9989XXXXXX)'
+            },
+            'quiz-master': {
+                title: 'CEA Quiz Master',
+                type: 'Non-Technical',
+                description: 'A multi-round quiz competition covering general engineering knowledge, current affairs, college history, and famous structures worldwide. Form teams of three and compete for the title!',
+                venue: 'Classroom C-205',
+                time: 'Day 1 (March 15) | 2:00 PM - 3:30 PM',
+                poster: 'https://placehold.co/600x400/38bdf8/ffffff?text=Quiz+Master+Poster',
+                regLink: 'https://forms.gle/YOUR_QUIZ_MASTER_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'B. Sumanth (7093XXXXXX)',
+                facultyCoord: 'Mr. P. Raja Rao, Asst. Prof. (8801XXXXXX)'
+            },
+            'instagram-challenge': {
+                title: 'Photo Booth & Instagram Challenge',
+                type: 'Non-Technical',
+                description: 'Capture the spirit of CEA Fest! Visit the themed photo booth and upload your best picture to Instagram using the official fest hashtag. Judges select the most creative photo.',
+                venue: 'Main Entrance Lobby',
+                time: 'Both Days | All Day Event',
+                poster: 'https://placehold.co/600x400/38bdf8/ffffff?text=Photo+Challenge+Poster',
+                regLink: 'https://forms.gle/YOUR_INSTAGRAM_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'R. Spandana (9505XXXXXX)',
+                facultyCoord: 'Ms. L. Sandhya, Asst. Prof. (9666XXXXXX)'
+            },
+            'minute-to-win-it': {
+                title: 'Minute to Win It',
+                type: 'Non-Technical',
+                description: 'Fast-paced, high-energy games that rely on coordination, balance, and precision—all completed in under 60 seconds. A guaranteed crowd-pleaser!',
+                venue: 'Open Lawn Area',
+                time: 'Day 2 (March 16) | 4:00 PM - 5:00 PM',
+                poster: 'https://placehold.co/600x400/38bdf8/ffffff?text=Minute+to+Win+It+Poster',
+                regLink: 'https://forms.gle/YOUR_MINUTE_TO_WIN_IT_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'M. Sridhar (9059XXXXXX)',
+                facultyCoord: 'Dr. V. Kavitha, Assoc. Prof. (8919XXXXXX)'
+            },
+            'cultural-night': {
+                title: 'Cultural Night',
+                type: 'Non-Technical',
+                description: 'The closing event of the fest. Enjoy performances, including singing, dancing, skits, and stand-up comedy, by students and faculty. A celebration of our talents!',
+                venue: 'Main Open-Air Stage',
+                time: 'Day 2 (March 16) | 6:00 PM Onwards',
+                poster: 'https://placehold.co/600x400/38bdf8/ffffff?text=Cultural+Night+Poster',
+                regLink: 'https://forms.gle/YOUR_CULTURAL_NIGHT_GOOGLE_FORM_LINK', // *** UPDATE THIS LINK ***
+                studentCoord: 'K. Rahul (7780XXXXXX)',
+                facultyCoord: 'Mr. P. Shiva, Asst. Prof. (7382XXXXXX)'
+            }
+        };
+
+        // --- GENERAL JS LOGIC ---
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Function to display event details
+        function showEventDetails(eventId) {
+            const data = eventData[eventId];
+            const detailsView = document.getElementById('event-details-view');
+
+            if (!data) {
+                console.error('Event data not found for ID:', eventId);
+                return;
+            }
+
+            // Populate Modal Content
+            document.getElementById('detail-title').textContent = data.title;
+            document.getElementById('detail-type').textContent = data.type;
+            document.getElementById('detail-type').className = inline-block text-sm font-semibold px-3 py-1 rounded-full mb-6 ${data.type === 'Technical' ? 'text-primary bg-primary/10' : 'text-secondary bg-secondary/10'};
+            document.getElementById('detail-description').textContent = data.description;
+            document.getElementById('detail-venue').textContent = data.venue;
+            document.getElementById('detail-time').textContent = data.time;
+            document.getElementById('detail-poster').src = data.poster;
+            document.getElementById('detail-reg-link').href = data.regLink;
+            document.getElementById('detail-student-coord').textContent = data.studentCoord;
+            document.getElementById('detail-faculty-coord').textContent = data.facultyCoord;
+
+            // Show the modal/view
+            detailsView.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling the main page
+        }
+
+        // Function to hide event details
+        function hideEventDetails() {
+            const detailsView = document.getElementById('event-details-view');
+            detailsView.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    </script>
+</body>
+</html>

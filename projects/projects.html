@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Projects - SHAIK MURASHA VALLI</title>
+  <meta name="description" content="Explore our stunning collection of interior design projects featuring modern living rooms, elegant bedrooms, and contemporary kitchens.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  
+  <style>
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      height: 70vh;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      margin: 2rem auto;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: opacity 0.8s ease;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .description {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      background: var(--bg-secondary);
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      backdrop-filter: blur(8px);
+      color: var(--text-primary);
+    }
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--bg-secondary);
+      border: none;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--bg-hover);
+    }
+
+    #prev { left: 20px; }
+    #next { right: 20px; }
+
+    .projects-section {
+      padding-top: 5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="light">
+
+    <section class="section projects-section">
+        <div class="section-header">
+            <h1 class="section-title">Interior Design Projects</h1>
+            <p class="muted-foreground">Explore our latest interior design visualizations</p>
+        </div>
+
+        <div class="container">
+            <div class="slider-wrapper">
+                <!-- Slides -->
+                <div class="slide fade">
+                    <img src="project1images/Living Room.jpg" alt="Modern living room design">
+                    <div class="description">Modern living room design with elegant ceiling and wooden textures.</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="project1images/Bed room 1.png" alt="Cozy bedroom design">
+                    <div class="description">Cozy bedroom with a large wall clock and warm ambient lighting.</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="project1images/bedroom 2,1.jpg" alt="Stylish bedroom design">
+                    <div class="description">Stylish bedroom with accent lighting and contemporary wooden finishes.</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="project1images/kitchen 2.jpg" alt="Modern kitchen design">
+                    <div class="description">Bright L-shaped kitchen design with modern storage and lighting.</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="project1images/bedroom 1,1.png" alt="Elegant bedroom design">
+                    <div class="description">Elegant bedroom design showcasing modern furniture and lighting solutions.</div>
+                </div>
+
+                <!-- Navigation buttons -->
+                <button id="prev" class="btn">&#10094;</button>
+                <button id="next" class="btn">&#10095;</button>
+            </div>
+        </div>
+        
+    </section>
+    
+
+    
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        document.getElementById('next').addEventListener('click', () => {
+            showSlides(slideIndex += 1);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            showSlides(slideIndex -= 1);
+        });
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll(".slide");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+
+            slides.forEach((slide) => slide.style.display = "none");
+            slides[slideIndex].style.display = "block";
+        }
+
+        // Auto slide every 5s
+        setInterval(() => {
+            showSlides(slideIndex += 1);
+        }, 5000);
+    </script>
+  
+    <!-- Include Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
